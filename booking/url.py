@@ -245,7 +245,51 @@ class EditBooking(View):
             'booking_form': booking_form,
             'customer_form': customer_form,
             'booking': booking,
-            'customer': customer,})
+            'customer': customer
+            })
+
+
+class DeleteBooking(View):
+
+    def get(self, request, booking_id):
+        if request.user.is_authenticated:
+            booking = get_object_or_404(
+                Booking, booking_id=booking_id)
+            customer = get_customer_instance(request, User)
+            today = datetime.datetime.now().date()
+            if booking.requested_date < today:
+                messages.add_message(request, messages.ERROR, "You are trying to cancel a booking that is in the past")
+                url = reverse('manage_booking')
+                return HttpResponseRedirect(url)
+            else:
+                booking_owner = booking.customer
+                name_of_user = customer
+
+                if booking_owner != name_of_user:
+                    messages.add_message(request, messages.ERROR, "You are trying to cancel a booking that is not yours")
+                    url = reverse('manage_booking')
+                    return HttpResponseRedirect(url)
+
+                else:
+                    messages.add_message(request, messages.ERROR, "You must be logged in to manage your bookings")
+                    url = reverse('booking')
+                    return HttpResponseRedirect(url)
+
+
+
+    def post(self, request, booking_id):
+        if request.user.is_authenticated:
+            booking_id = booking_idbooking = Booking.objects.get(pk=booking_id)
+            booking.delete()
+            messages.add_message(request, messages.SUCCESS, f"Booking {booking_id} has now been cancelled")
+        
+        current_booking = fetch_booking(request, User)
+
+        return render(request, 'manage_booking.html',
+        {'booking': current_booking})
+
+
+
 
 
 
