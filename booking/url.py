@@ -100,7 +100,7 @@ class Enquiry(View):
                 booking.customer = customer
                 booking_form.save()
 
-                messages.add_message(request, message.SUCCESS,
+                messages.add_message(request, messages.SUCCESS,
                     f"Thank you {customer_name}, for booking" f"{customer_run_name} on"
                     f"{customer_requested_date}! \
                         We look forward to seeing you!")
@@ -132,5 +132,126 @@ def fetch_booking(request, User):
         else:
             return get_booking
     else:
-        retun None
+        return None
+
+
+def validate_date(self, request, bookings):
+    today = datetime.datetime.now().date()
+    for booking in bookings:
+        return bookings
+
+
+class ManageBooking(View):
+
+    def get(self,request):
+        if request.user.is_authenticated:
+            customer = get_customer_instance(request, User)
+            print("customer", customer)
+
+            current_booking = fetch_booking(request, User)
+            print("current_booking", current_booking)
+
+            if current_booking is None:
+                messages.add_message(request, messages.WARNING,
+                "You have no runs booked. No sweat! "
+                "You can book here,")
+                url = reverse('booking')
+                return HttpResponseRedirect(url)
+            
+            else:
+                return render(request, 'manage_booking.html',
+                {'booking': current_booking})
+
+        else:
+            messages.add_message(request, messages.ERROR, "You must be logged in to manage your bookings")
+
+            url = reverse('booking')
+            return HttpResponseRedirect(url)
+
+
+class EditBooking(View):
+
+    def get(self, request, booking_id):
+        if request.user.is_authenticated:
+            booking = get_object_or_404(Booking, booking_id=booking_id)
+            today = datetime.datetime.now().date()
+            if booking.requested_date < today:
+                messages.add_message(request, messages.ERROR, "You are trying to edit a booking from the past")
+                url = reverse('manage_booking')
+                return HttpResponseRedirect(url)
+            else:
+                date_to_string = booking.requested_date.strftime("%d/%m/%Y")
+                booking.requested_date = date_to_string
+
+                customer = get_customer_instance(request, User)
+
+                booking_owner = booking.customer
+                name_of_user = Customer
+                
+                if booking_owner != name_of_user:
+                    messages.add_message(request, messages.ERROR, "You are trying to edit a booking that is not yours")
+                    url = reverse('manage_booking')
+                    return HttpResponseRedirect(url)
+                else:
+                    customer_form = CustomerForm(instance=customer)
+                    booking_form = BookingForm(instance=booking)
+
+                    return render(request, 'edit_booking.html', {
+                        'customer_form': customer_form,
+                        'customer': customer,
+                        'booking_form': booking_form,
+                        'booking': booking,
+                        'booking_id': booking_id
+                    }
+                    )
+        else:
+            messages.add_message(request, messages.ERROR, "You must be logged in to manage your bookings")
+            url = reverse('booking')
+            return HttpResponseRedirect(url)
+
+
+    def post(self, request, booking_id):
+        customer = get_customer_instance(request, User)
+        if request.user.is_authenticated:
+            booking_id = booking_id
+            booking = get_object_or_404(Booking, booking_id=booking_id)
+            booking_form = BookingForm(data=request.POST, instance=booking)
+            customer_form = CustomerForm(instance=customer)
+
+        if booking_form.is_valid():
+            customer_requested_date = request.POST.get('requsted_date')
+            date_formatted = datetime.strptime(
+                customer_requested_date, "%d/%m/%Y").strftime('%Y-%m-%d')
+            booking.booking_id = booking_id
+            booking.requested_date = date_formatted
+            booking.requested_run = request.POST.get('class_name')
+            booking.status = 'pending'
+            booking_form.save(commit=False)
+            booking_form.save()
+            messages.add_message(request, messages.SUCCESS, f"booking {booking_id} \
+                has now been updated")
+            current_booking = fetch_booking(request, User)
+
+            return render(request, 'manage_booking.html', {
+                'booking': current_booking
+            })
+        else:
+            messages.add_message(request, messages.ERROR,
+            "Something is not right with your form "
+            "- please make sure your name and email address are "
+            "entered in the correct format")
+
+        return render(request, 'edit_booking.html', {
+            'booking_form': booking_form,
+            'customer_form': customer_form,
+            'booking': booking,
+            'customer': customer,})
+
+
+
+
+
+
+
+
 
