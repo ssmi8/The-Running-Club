@@ -117,3 +117,20 @@ class Enquiry(View):
         {'customer_form': customer_form,
         'booking_form': booking_form})
 
+
+def fetch_booking(request, User):
+    customer_email = request.user.email
+    if len(Customer.objects.filter(email=customer_email)) !=0:
+        current_customer = Customer.objects.get(email=customer_email)
+        current_customer_id = current_customer.pk
+
+        get_booking = Booking.objects.filter(
+            customer=current_customer_id).value().order_by('requested_date')
+        
+        if len(get_booking) == 0:
+            return None
+        else:
+            return get_booking
+    else:
+        retun None
+
