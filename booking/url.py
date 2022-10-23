@@ -58,37 +58,62 @@ class Enquiry(View):
 
 
 
-def post(self, request):
-    if request.user.is_authenticated:
-        customer_form = CustomerForm(data=request.POST)
-        booking_form = BookingForm(data=request.POST)
+    def post(self, request):
+        if request.user.is_authenticated:
+            customer_form = CustomerForm(data=request.POST)
+            booking_form = BookingForm(data=request.POST)
 
-    if customer_form.is_valid() and booking_form.is_valid():
-        customer_run_name = request.POST.get('run_name')
-        customer_requested_date = request.POST.get('requested_date')
-        customer_name = request.POST.get('full_name')
+        if customer_form.is_valid() and booking_form.is_valid():
+            customer_run_name = request.POST.get('run_name')
+            customer_requested_date = request.POST.get('requested_date')
+            customer_name = request.POST.get('full_name')
 
-        date_formatted = datetime.datetime.strptime(
-            customer_requested_date, "%d/%m/%Y").strftime('%Y-%m-%d')
+            date_formatted = datetime.datetime.strptime(
+                customer_requested_date, "%d/%m/%Y").strftime('%Y-%m-%d')
 
-        runs_booked = check_avilability(customer_run_name, date_formatted)
+            runs_booked = check_avilability(customer_run_name, date_formatted)
 
-    if runs_booked > booking_runs:
-        messages.add_message(request, messages.ERROR,
-        "Sorry," f"{customer_run_name}" "\is fully booked on" f"{customer_requested_date}")
+            if runs_booked > booking_runs:
+                messages.add_message(request, messages.ERROR,
+                "Sorry," f"{customer_run_name}" "\is fully booked on" f"{customer_requested_date}")
 
-        return render(request, 'booking.html', {
-            'cusomer_form': customer_form,
-            'booking_form': booking_form
-        })
-    else:
-        customer_email = request.POST.get('email')
-        customer_query = len(Customer.objects.filter(email=customer_email))
+                return render(request, 'booking.html', {
+                    'cusomer_form': customer_form,
+                    'booking_form': booking_form
+                })
+            else:
+                customer_email = request.POST.get('email')
+                customer_query = len(Customer.objects.filter(email=customer_email))
 
-        if customer_query > 0:
-            pass
+                if customer_query > 0:
+                    pass
+                else:
+                    customer_form.save()
+            
+                current_customer = Customer.objects.get(
+                email=customer_email)
+                current_customer_id = current_customer.pk
+                customer = Customer.objectes.get(customer_id=current_customer_id)
+
+                booking = booking_form.save(commit=False)
+                booking.requested_date = date_formatted
+                booking.customer = customer
+                booking_form.save()
+
+                messages.add_message(request, message.SUCCESS,
+                    f"Thank you {customer_name}, for booking" f"{customer_run_name} on"
+                    f"{customer_requested_date}! \
+                        We look forward to seeing you!")
+            
+                url = reverse('booking')
+                return HttpResponseRedirect(url)
+
         else:
-            customer_form.save()
+            messages.add_message(request, messages.Error,
+            "Opps! Something went wrong with your form "
+            "- please make sure your name and email are in the correct format.")
 
+        return render(request, 'booking.html',
+        {'customer_form': customer_form,
+        'booking_form': booking_form})
 
-        
