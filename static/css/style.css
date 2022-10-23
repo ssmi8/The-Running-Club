@@ -140,3 +140,26 @@ body {
     background: transparent;
     border: none;
 }
+
+/* Home Page */
+
+.min-vh-75 {
+    min-height: 75vh;
+}
+
+.page-header {
+    margin-bottom: 15px;
+    background: no-repeat center center;
+    background-color: #868e96;
+    background-attachment: scroll;
+    position: relative;
+    background-size: cover;
+}
+
+.sub-heading {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.1;
+    display: block;
+    margin: 10px 0 0;
+}
