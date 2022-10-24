@@ -7,5 +7,29 @@
 {% load cripsy_forms_tags %}
 
 <div class="page_header align-items-start min-vh-75" style="background-image: utl({% static 'images/running_booking.jpg' %});" loading="lazy"></div>
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+        <div class="col-sm-8">
+            <h2 class="text-center mt-2 mb-3">Book a running slot with us!</h2>
+            <h5 class="text-center mt-3 mb-3">We meet 20 minutes before the run to register and warm up</h5>
+            <h5 class="text-center mt-3 mb-3">Runs last one hour and are alwayd run in groups of no less than 2</h5>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center">
+        <div class="col-xs-10 col-sm-6 col-md-8 col-lg-6 col-xl-5">
+            <form method="POST" class="mb-5 booking-enquiry full-form">
+
+                {% csrf_token %}
+
+                {{ customer_form | crispy }}
+
+                {{ booking_form | crispy }}
+
+                <button type="submit" class="booking-run-button buttton mt-4 text-center submit-button">Book Slot</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
