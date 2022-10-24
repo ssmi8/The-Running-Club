@@ -24,22 +24,30 @@ class RunName(models.Model):
 
 
 class Booking(models.Model):
-    RUN_STATUS = (('Fully_Booked', 'Fully_Booked'), ('Available', 'Available'))
-    
-    CHOICE_STATUS = (('Yes', 'y'), ('No', 'n'), ('Pending', 'p'))
-    
+      
+    STATUS_CHOICES = (('Fully_Booked', 'Fully_Booked'),
+                      ('Availble', 'Availble'))
+
+    OPTION_STATUS = (('y', 'Yes'), ('n', 'No'), ('p', 'Pending'))
+
     class Meta:
+        """Booking Meta"""
         verbose_name_plural = 'Bookings'
-        
-        booking_id = models.AutoField(primary_key=True)
-        customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name="customer", null=True)
-        run_name = models.ForeignKey('Run_Name', on_delete=models.CASCADE, default=True)
-        status = models.CharField(max_length=20, choices=CHOICE_STATUS, default='Available')
-        spots = models.IntegerField(default=True, null=False, validators=[
-            MaxValueValidator(30), MinValueValidator(1)])
-        requested_date = models.DateField()
-        bookingstatus = models.CharField(max_length=20, default='p', choices=CHOICE_STATUS)
+
+    booking_id = models.AutoField(primary_key=True)
+    customer = models.ForeignKey(
+        Customer, on_delete=models.CASCADE, related_name="customer", null=True)
+    run_name = models.ForeignKey(
+        'RunName', on_delete=models.CASCADE, default=True)
+    status = models.CharField(
+        max_length=15, choices=STATUS_CHOICES, default='Available')
+    seats = models.IntegerField(default=True, null=False, validators=[
+            MaxValueValidator(10),
+            MinValueValidator(1)
+        ])
+    requested_date = models.DateField()
+    bookingtatus = models.CharField(
+        max_length=10, default='p', choices=OPTION_STATUS)
 
     def __str__(self):
         return str(self.run_name)
-

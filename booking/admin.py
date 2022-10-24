@@ -12,9 +12,10 @@ class RunNameAdmin(admin.ModelAdmin):
     list_display = ('runs',)
 
 
-@amdin.register(booking)
+@admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
     search_fields = ['run_name']
     list_filter = ('run_name', 'status')
-    list_display = ('booking_id', 'run_name', 'customer', 'status', 'requested_date',)
+    list_display = ('booking_id', 'run_name', 'customer', 'status', 
+    'requested_date',)
     
