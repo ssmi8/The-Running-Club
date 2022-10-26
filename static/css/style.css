@@ -9,20 +9,84 @@ body {
     color: #4A4A4F;
 }
 
-.red-o {
-    color: #E84610;
+/* Home Page Styling*/
+
+.home-title {
+    text-align: center;
+    margin: 30px 20px 20px 20px;
+    line-height: 30px;
 }
 
-.thin {
-    font-weight: 300;
+.header-bar {
+    background-color: #232dbb;
 }
+
+.intro-msg {
+    text-align: center;
+    margin: 20px 20px 20px 20px;
+    line-height: 30px;
+}
+
+.btn-link {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(40, 40, 40);
+    margin: 20px;
+    height: 50px;
+    width: 150px;
+    border-radius: 20px;
+    align-items: center;
+}
+
+.btn-link:hover {
+    color: rgba(63, 63, 234, 0.913);
+}
+
+.image-container {
+    position: relative;
+}
+
+/* SignUp Page */
+
+/* Article Page */
+.image-flash {
+    position: absolute;
+    bottom: 5%;
+    min-width: 30%;
+    left: -2px;
+    background-color: #4A4A4F;
+}
+
+.author {
+    color: white;
+    margin: 4px;
+    text-transform: uppercase;
+}
+
+.post-link {
+    text-decoration: none;
+    color: #445261;
+}
+
+.post-date  {
+    color: #445261;
+
+}
+
+body {
+    background-color: #F9FAFC;
+}
+
+.brand {
+    font-family: Lato, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #4A4A4F;
+}
+
 
 .light-bg {
     background-color: #fff;
-}
-
-.dark-bg {
-    background-color: #445261;
 }
 
 .main-bg {
@@ -41,9 +105,9 @@ body {
 .image-flash {
     position: absolute;
     bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #23BBBB;
+    width: 100%;
+    background-color: #232dbb;
+    text-align: center;
 }
 
 .author {
@@ -51,6 +115,9 @@ body {
     margin: 4px;
     text-transform: uppercase;
 }
+
+
+/* post detail */
 
 .masthead {
     margin-top: 10px;
@@ -106,27 +173,6 @@ body {
     color: lightgray;
 }
 
-.btn-signup {
-    background-color: #23BBBB;
-    color: #fff;
-}
-
-.btn-signup:hover,
-.btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
-}
-
-.link {
-    color: #23BBBB;
-    text-decoration: none;
-}
-
-.link:hover,
-.link:active {
-    color: #445261;
-    text-decoration: underline;
-}
 
 .btn-like {
     color: #E84610;
@@ -143,10 +189,6 @@ body {
 
 /* Home Page */
 
-.min-vh-75 {
-    min-height: 75vh;
-}
-
 .page-header {
     margin-bottom: 15px;
     background: no-repeat center center;
@@ -162,4 +204,10 @@ body {
     line-height: 1.1;
     display: block;
     margin: 10px 0 0;
+}
+
+/* Footer */
+
+.dark-bg {
+    background-color: rgb(40, 40, 40);
 }

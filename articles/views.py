@@ -51,7 +51,7 @@ def my_articles(request):
     return render(request, 'my_articles.html', {'posts': logged_in_user_posts})
 
 
-def edit_article(request, posy_id):
+def edit_article(request, post_id):
     post = get_object_or_404(Post, id=post_id)
     if request.method == 'POST':
         form = ArticleForm(request.POST, instance=post)
