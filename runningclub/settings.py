@@ -60,6 +60,11 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+ACCOUNT_LOGOUT_ON_GET = True
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_REQUIRED = False
+ACCOUNT_AUTHENICATION_METHOD = 'username'
+ACCOUNT_USRENAME_REQUIRED = True
 
 MESSAGE_TAGS = {
         messages.DEBUG: 'alert-info',
@@ -148,8 +153,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-DATE_INPUT_FORMAT = ['%d/%m/%Y']
 
 
 # Static files (CSS, JavaScript, Images)

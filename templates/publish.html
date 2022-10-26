@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% crispy_forms_tags %}
+
+<div class="container-fluid post-from-container">
+
+    {% if published %}
+        {{ message }}
+    {% else %}
+    {% if user.is_authenticated %}
+    <h3 class="title">Publish you Article</h3>
+    <p>Publishing as: {{ user.username}}</p>
+    <form method="POST" action="{% url 'publish' %}" enctype="multipart/form-data">
+        {{ article_form | crispy }}
+        {% csrf_token %}
+        <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+    </form>
+    {% endif %}
+    {% endif %}
+
+</div>
+
+{% endblock %}

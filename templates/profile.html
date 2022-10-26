@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <div class="row profile">
+        <p>Hi {{ user.username }}, Welcome to the Running Club!</p>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <ul class="ms-auto w-100">
+            <li class="profile-item">
+                <a class="btn btn-signup btn-lg profile-item-link" href="{% url 'publish' %}">Publish an article</a>
+            </li>
+            <li class="profile-item">
+                <a class="btn btn-signup btn-lg profile-item-link" href="{% url 'my_articles' %}">Manage my articles</a>
+            </li>
+            <li class="profile-item">
+                <button type="button" class="btn btn-signup btn-lg btn-link" data-bas-toggle="modal" data-bs-target="#logoutModal">LOGOOUT</button>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+{% endblock %}

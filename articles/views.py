@@ -58,7 +58,7 @@ def edit_article(request, posy_id):
         if article_form.is_valid():
             form = article_form.save(commit=False)
             form.approved = False
-            messages.SUCCESS(request, 'Updated article post has been sibmitted for approval')
+            messages.SUCCESS(request, 'Updated article post has been submitted for approval')
             form.save()
 
             return redirect('my_articles')
