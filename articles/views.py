@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
@@ -33,7 +33,7 @@ def publish(request):
         if article_form.is_valid():
             form = article_form.save(commit=False)
             form.author = User.objects.get(username=request.user.username)
-            form.slug = form.titile.replace(" ", "-")
+            form.slug = form.title.replace(" ", "-")
             messages.success(request, 'Your article post has been submitted for approval')
             form.save()
         
