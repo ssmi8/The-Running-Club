@@ -10,5 +10,5 @@ urlpatterns = [
     path('publish', views.publish, name='publish'),
     path('my_articles', views.my_articles, name='my_articles'),
     path('edit/<post_id>', views.edit_article, name='edit'),
-    # path('delete/<post_id>', views.delete_post, name='delete'),
+    path('delete/<post_id>', views.delete_post, name='delete'),
 ]

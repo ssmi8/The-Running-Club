@@ -19,6 +19,7 @@ class PostList(generic.ListView):
     template_name = "article.html"
     paginate_by = 6
 
+
 def profile(request):
 
     return render(request, "profile.html")
@@ -27,13 +28,13 @@ def profile(request):
 def publish(request):
 
     if request.method == 'POST':
-        ArticleForm(request.POST, request.FILES)
+        article_form = ArticleForm(request.POST, request.FILES)
 
         if article_form.is_valid():
             form = article_form.save(commit=False)
             form.author = User.objects.get(username=request.user.username)
             form.slug = form.titile.replace(" ", "-")
-            messages.SUCCESS(request, 'Your article post has been submitted for approval')
+            messages.success(request, 'Your article post has been submitted for approval')
             form.save()
         
         return redirect('my_articles')
@@ -58,7 +59,7 @@ def edit_article(request, post_id):
         if article_form.is_valid():
             form = article_form.save(commit=False)
             form.approved = False
-            messages.SUCCESS(request, 'Updated article post has been submitted for approval')
+            messages.success(request, 'Updated article post has been submitted for approval')
             form.save()
 
             return redirect('my_articles')
@@ -66,6 +67,14 @@ def edit_article(request, post_id):
     context = {'article_form': article_form}
 
     return render(request, 'edit_article.html', context)
+
+
+def delete_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    post.delete()
+    messages.success(request, 'Article deleted!')
+
+    return redirect('my_articles')
 
 
 class PostDetail(View):
