@@ -11,6 +11,28 @@ body {
 
 /* Home Page Styling*/
 
+.page-header {
+    margin-bottom: 15px;
+    background: no-repeat center center;
+    background-color: #868e96;
+    background-attachment: scroll;
+    position: relative;
+    background-size: cover;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.sub-heading {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.1;
+    display: block;
+    margin: 10px 0 0;
+}
+
 .home-title {
     text-align: center;
     margin: 30px 20px 20px 20px;
@@ -194,8 +216,11 @@ body {
 }
 
 .post-title {
-    margin-top: 20%;
-    margin-left: 5%;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 20px;
 }
 
 .post-subtitle {
@@ -217,27 +242,26 @@ body {
     border: none;
 }
 
-/* Home Page */
-
-.page-header {
-    margin-bottom: 15px;
-    background: no-repeat center center;
-    background-color: #868e96;
-    background-attachment: scroll;
-    position: relative;
-    background-size: cover;
-}
-
-.sub-heading {
-    font-size: 24px;
-    font-weight: 300;
-    line-height: 1.1;
-    display: block;
-    margin: 10px 0 0;
-}
-
 /* Footer */
 
 .dark-bg {
     background-color: rgb(40, 40, 40);
+}
+
+/* My Articles */
+
+.my-articles-container {
+    margin: 70px 20px 20px 20px;
+    width: 80%;
+    display: block;
+}
+
+.my-list {
+    margin-top: 30px;
+    border: #232dbb 1px solid;
+}
+
+.status {
+    background-color: #4A4A4F;
+    color: white;
 }
