@@ -57,4 +57,58 @@ The defined user stories can be found here.
     ENTER ARTICLE PAGE
 
     - This feature helps the user to choose a particular article to view and gives them an idea as to what the article is about.
-    - 
+    - The Article page has pagination feature with each page upto 6 posts.
+
+    ENTER NEXT & PREVIOUS
+
+- Sign Up
+    - Users can register and create their own account.
+    - The sign-up form check if the uusername is used already and alerts the user if any information is incorrect, as an example: passwords don't match or required fields being empty.
+    - Creating an account enables access to more features.
+    - Registered users can publish and manage their article posts.
+    - Registered users can like and comment on other articles.
+
+    ENTER SIGN UP PAGE
+
+- Sign In
+    - Users can access their account via sign-in and login feature.
+    - Once logged in, the users can publish and manage their articles, as well as like and comment on posts.
+    - Users can login from the menu or homepage.
+    - If the user has not got an account, they can signup using the link on the login page.
+
+    ENTER SIGN IN PAGE
+
+- Logout
+    - The user can logout from the Menu and their accounts page.
+    - When the user wants to logout a pop-up modal is triggered for confirmation.
+    - The logout modal asks the user if they confirm to logout.
+
+    ENTER LOGOUT PAGE
+
+- User Account/Profile Page
+    - Once the user is registered or logged in, they have a user profile page.
+    - In this page users can publish an article, or manage their articles.
+    - If they want, they can access the logout feature through the logout button.
+
+    ENTER PROFILE PAGE
+
+- Publish an article
+    - Creating and adding an article by a registered user is possible.
+    - The user can publish an article after signing in and from the profile page.
+    - The user needs to enter the title, content and image to post the article.  THe excerpt is optional.
+
+    ENTER PUBLISH PAGE
+
+    - Once the article is published te user can view, edit or delete the article in the Manage Articles page.
+
+- Manage Articles Page
+    - User has the control to their published and pending approval articles.
+    - The user can see the list of their articles.
+    - Each article listed has information to that article.
+    - Status of article: If the article is sent for approval and yet to be published, the display shows 'pending approval'.  Once approved by admin, it is published a message "Published" is displayed.
+    - The buttons for editng and deleting are given for the user.
+
+    ENTER MANAGED ARTICLES PAGE
+
+
+
