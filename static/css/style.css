@@ -48,6 +48,36 @@ body {
 
 /* SignUp Page */
 
+/* Profile Page */
+
+.profile-item {
+    list-style: none;
+    text-align: center;
+    margin: 20px;
+}
+
+.profile-item-link {
+    width: 60%;
+    background-color: #445261;
+    color: white;
+}
+
+.profile {
+    text-align: center;
+}
+
+.btn-signup {
+    background-color: #445261;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-signup:hover, btn-signup:active {
+    background-color: #232dbb;
+    color: #fff;
+}
+
 /* Article Page */
 .image-flash {
     position: absolute;

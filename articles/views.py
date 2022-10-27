@@ -55,7 +55,7 @@ def my_articles(request):
 def edit_article(request, post_id):
     post = get_object_or_404(Post, id=post_id)
     if request.method == 'POST':
-        form = ArticleForm(request.POST, instance=post)
+        article_form = ArticleForm(request.POST, instance=post)
         if article_form.is_valid():
             form = article_form.save(commit=False)
             form.approved = False

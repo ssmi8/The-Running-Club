@@ -10,7 +10,7 @@
         {{ message }}
     {% else %}
     {% if user.is_authenticated %}
-    <h3 class="title">Publish you Article</h3>
+    <h3 class="title">Publish your Article</h3>
     <p>Publishing as: {{ user.username}}</p>
     <form method="POST" action="{% url 'publish' %}" enctype="multipart/form-data">
         {{ article_form | crispy }}
