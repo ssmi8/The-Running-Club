@@ -11,7 +11,11 @@ I have used django TestCase for automated testing views, forms and models files.
 - Tested if the views are functioning as expected and returns pages that ther user needs to be at.
     - Testing Index/Home Page view:
 
-    ENTER TEST INDEX VIEWS CODE
+    `class TestIndexViews(TestCase):`
+        `def test_get_index_page(self):`
+        `response = self.client.get('/')`
+        `self.assertEqual(response.status_code, 200)`
+        `self.assertTemplateUsed(response, 'index.html')`
 
     - Testing Article Page View:
 
