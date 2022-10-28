@@ -211,7 +211,8 @@ During the project development process, I have used various sources to aid my de
 - Code Institute - Course materials and Django Blog Walkthrough Project.
 - Bootstrap Modal
 - Cripsy Forms
-- Youtube videos - User Registration & Admin approvals - Corey Schafer
+- Youtube videos - User Registration & Admin approvals - Corey Schafer & Code.My
+
 
 
 
