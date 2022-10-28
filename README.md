@@ -225,23 +225,47 @@ I have used django TestCase for automated testing views, forms and models files.
 - Tested if the views are functioning as expected and returns pages that ther user needs to be at.
     - Testing Index/Home Page view:
 
-    `class TestIndexViews(TestCase):`
-        `def test_get_index_page(self):`
-        `response = self.client.get('/')`
-        `self.assertEqual(response.status_code, 200)`
-        `self.assertTemplateUsed(response, 'index.html')`
+    ```ruby
+    class TestIndexViews(TestCase):   
+        def test_get_index_page(self):
+            response = self.client.get('/')
+            self.assertEqual(response.status_code, 200)
+            self.assertTemplateUsed(response, 'index.html')
+            
 
-    - Testing Article Page View:
 
-    Enter TEST ARTICLE VIEWS
+- Testing Article Page View:
 
-    - Testing Profile Page View:
+    ```ruby
+    class TestPostListViews(TestCase):
+        def test_get_post_list_page(self):
+            response = self.client.get('/article/')
+            self.assertEqual(response.status_code, 200)
+            self.assertTemplateUsed(response, 'article.html')
+            
 
-    ENTER TEST FOR PROFILE VIEW
 
-    - Testing Adding/Publish Articles Page View:
 
-    ENTER TEST FOR PUBLISH VIEW
+- Testing Profile Page View:
+
+    ```ruby
+    class TestProfileViews(TestCase):
+        def test_profile_page(self):
+            response = self.client.get('/profile')
+            self.assertEqual(response.status_code, 200)
+            self.assertTemplateUsed(response, 'profile.html')
+            
+
+
+- Testing Adding/Publish Articles Page View:
+
+   ```ruby
+    class TestPublishPoemViews(TestCase):
+        def test_can_publish_poem(self):
+            response = self.client.get('/publish')
+            self.assertEqual(response.status_code, 200)
+            self.assertTemplateUsed(response, 'publish.html')
+            
 
 Result:
 
@@ -253,23 +277,54 @@ ENTER TERMINAL RESULT
 
     - Testing Article Form:
 
-    ENTER TEST ARTICLE FORM
+   ```ruby 
+   class TestArticleForm(TestCase):
+    def test_post_title_is_required(self):
+        form = ArticleForm(({'title': ''}))
+        self.assertFalse(form.is_valid())
+        self.assertIn('content', form.errors.keys())
+        self.assertEqual(form.errors['title'][0], 'This field is required.')
+
+    def test_post_content_is_required(self):
+        form = ArticleForm(({'content': ''}))
+        self.assertFalse(form.is_valid())
+        self.assertIn('content', form.errors.keys())
+        self.assertEqual(form.errors['content'][0], 'This field is required.')
+    
+    def test_fields_are_explicit_in_form_metaclass(self):
+        form = ArticleForm()
+        self.assertEqual(form.Meta.fields, ('title', 'content', 'excerpt',
+        'featured_image'))
+
+- Testing Comment Form:
+    ```ruby 
+    class TestCommentForm(TestCase):
+    def test_post_title_is_required(self):
+        form = CommentForm(({'body': ''}))
+        self.assertFalse(form.is_valid())
+        self.assertIn('body', form.errors.keys())
+        self.assertEqual(form.errors['body'][0], 'This field is required.')
+
+    def test_fields_are_explicit_in_form_metaclass(self):
+        form = CommentForm()
+        self.assertEqual(form.Meta.fields, ('body',))
 
 Result:
-
-    - Testing Comment Form:
-
-    ENTER TEST COMMENT FORM 
-
-Result:
+![Test Forms Result](/documentation/test_forms.jpg "Test Forms Result")
 
 ### Testing Models:
 
     - Models are tested while testing views and forms as well. But in addition, I tested if the models shows that featured image is a requirement and successfully sent to the database:
 
-    ENTER TEST MODELS
+    ```ruby 
+    class TestModels(TestCase):
+    def test_has_featured_image(self):
+        self.assertTrue(Post.featured_image)
+        
 
 Result:
+![Test Models Result](/documentation/test_models.jpg "Test Models Result")
+
 
 ## Validator Testing
 
