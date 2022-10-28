@@ -81,7 +81,6 @@ The defined user stories can be found here.
 - Logout
     - The user can logout from the Menu and their accounts page.
     - When the user wants to logout a pop-up modal is triggered for confirmation.
-    - The logout modal asks the user if they confirm to logout.
 
     ENTER LOGOUT PAGE
 
