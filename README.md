@@ -44,17 +44,17 @@ The defined user stories can be found here.
 - Home Page
     - The home page has minimal content which gives a brief overview to the website, and doesn't overload the user with information.  There is a simple navigation bar for the user to navigate through the site easily.  If the user is not registered, the navigation bar will allow users to log in register.  If the user is registered and logged in, the can access their account or logout.
 
-    ENTER HOME PAGE
-    ENTER PROFILE PAGE
+    ![Home Page - top](/documentation/home_page1.jpg "Home Page")
+    ![Home Page - bottom](/documentation/home_page2.jpg "Home Page")
 
     - The account button takes the users to their profile.
 
-- Home Page
+- Article Page
     - The Article page is where the articles are shown.
     - The articles are shown with an image as a background for that post, along with the author.
     - The title, excerpt, date of publication and number of likes are visible for each post.
 
-    ENTER ARTICLE PAGE
+    ![Article Page](/documentation/articles_page.jpg "Article Page")
 
     - This feature helps the user to choose a particular article to view and gives them an idea as to what the article is about.
     - The Article page has pagination feature with each page upto 6 posts.
