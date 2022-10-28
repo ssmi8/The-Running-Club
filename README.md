@@ -11,6 +11,28 @@ The live site can be found here.
 
 ## Table of Contents
 
+- [About](#about)
+- [User Experience](#user-experience)
+    - [Admin](#admin)
+    - [Member User](#member-user)
+    - [General User](#general-user)
+-[Features](#features)
+    - [Existing Features](#existing-features)
+    - [Future Features](#future-features)
+- [Wireframes](#wireframes)
+- [Structure](#structure)
+- [Databases](#databases)
+    - [Post Model](#post-model)
+    - [Comment Model](#comment-model)
+- [Technologies Used](#technologies-used)
+- [Frameworksm, Libraries & Tools Used](#frameworks-libraries--tools-used)
+- [Testing](#testing)
+- [Deployment](#deployment)
+- [Credits](#credits)
+- [Acknowledgements](#acknowledgements)
+
+
+
 ## User Experience
 
 The website was designed with the design thinking approach.  The website only contains necessary content and information for the user.  The user can flow through the website easily and get to the information they are looking for.
@@ -130,7 +152,7 @@ The defined user stories can be found here.
     ![Comment Page](/documentation/comment_page.jpg "Comment Page")
     ![Likes Page](/documentation/likes_page.jpg "Likes Page")
 
-## Future Features
+### Future Features
 - Booking feature so users can join in nearby running groups.
 - Account holders will be able to save their favourite articles or to read later.
 - Users can set up their own profile page.
@@ -194,6 +216,94 @@ The Comment Model handles the content of the comment, the username of the commen
 
 Unit Testing, Validator Testing and Bugs are found here.
 
+## Unit Testing
+
+I have used django TestCase for automated testing views, forms and models files.
+
+### Testing Views
+
+- Tested if the views are functioning as expected and returns pages that ther user needs to be at.
+    - Testing Index/Home Page view:
+
+    `class TestIndexViews(TestCase):`
+        `def test_get_index_page(self):`
+        `response = self.client.get('/')`
+        `self.assertEqual(response.status_code, 200)`
+        `self.assertTemplateUsed(response, 'index.html')`
+
+    - Testing Article Page View:
+
+    Enter TEST ARTICLE VIEWS
+
+    - Testing Profile Page View:
+
+    ENTER TEST FOR PROFILE VIEW
+
+    - Testing Adding/Publish Articles Page View:
+
+    ENTER TEST FOR PUBLISH VIEW
+
+Result:
+
+ENTER TERMINAL RESULT
+
+### Testing Forms:
+
+- Tested Articles Post Form and Comment Form to ensure fields are as expected and the form is submitted to where it should:
+
+    - Testing Article Form:
+
+    ENTER TEST ARTICLE FORM
+
+Result:
+
+    - Testing Comment Form:
+
+    ENTER TEST COMMENT FORM 
+
+Result:
+
+### Testing Models:
+
+    - Models are tested while testing views and forms as well. But in addition, I tested if the models shows that featured image is a requirement and successfully sent to the database:
+
+    ENTER TEST MODELS
+
+Result:
+
+## Validator Testing
+
+### Lighthouse
+
+    - Testing results:
+
+    ENTER LIGHTHOUSE REPORT
+
+## W3C Markup Validation Service
+
+ENTER REPORT RESULT
+
+## W3C CSS Validation Service
+
+ENTER REPORT RESULT
+
+## PEP8 Python Validator
+
+
+## BUGS
+
+## User Story Testing
+
+### Admin
+
+    - As a Site Admin I can approve or disapprove posts so that I can filter out objectionable posts.
+    - As a Site Admin I can create, read, update and delete posts so that i can manage the content.
+    - As a Site Admin I can approve posts before it's published so the site can be consistent.
+    - As a Site Admin I can aprove comments before it's published.
+
+    ENTER ADMIN POST SCREEN FOR APPROVALS
+    ENTER ADMIN COMMENTS SCREEN FOR APPROVALS
+
 ADD TESTING PAGES
 
 ## Deployment:
@@ -210,6 +320,8 @@ During the project development process, I have used various sources to aid my de
 - Bootstrap Modal
 - Cripsy Forms
 - Youtube videos - User Registration & Admin approvals - Corey Schafer & Code.My
+
+## Acknowledgements
 
 
 
