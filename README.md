@@ -194,6 +194,27 @@ The Comment Model handles the content of the comment, the username of the commen
 
 ## Testing
 
+Unit Testing, Validator Testing and Bugs are found here.
+
+ADD TESTING PAGES
+
+## Deployment:
+
+This project was deployed to Heroku. 
+
+## Credits
+
+During the project development process, I have used various sources to aid my development and help me overcome particular features/bugs.  The following are the sources I got my knowledge from:
+
+- Stack Overflow
+- Django Project Documentation
+- Code Institute - Course materials and Django Blog Walkthrough Project.
+- Bootstrap Modal
+- Cripsy Forms
+- Youtube videos - User Registration & Admin approvals - Corey Schafer
+
+
+
 
 
 
