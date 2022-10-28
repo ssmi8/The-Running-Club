@@ -68,7 +68,7 @@ The defined user stories can be found here.
     - Registered users can publish and manage their article posts.
     - Registered users can like and comment on other articles.
 
-    ENTER SIGN UP PAGE
+    ![Sign Up Page](/documentation/signup_page.jpg "Sign Up Page")
 
 - Sign In
     - Users can access their account via sign-in and login feature.
@@ -76,27 +76,25 @@ The defined user stories can be found here.
     - Users can login from the menu or homepage.
     - If the user has not got an account, they can signup using the link on the login page.
 
-    ENTER SIGN IN PAGE
+    ![Sign In Page](/documentation/signin_page.jpg "Sign In Page")
 
 - Logout
     - The user can logout from the Menu and their accounts page.
     - When the user wants to logout a pop-up modal is triggered for confirmation.
-
-    ENTER LOGOUT PAGE
 
 - User Account/Profile Page
     - Once the user is registered or logged in, they have a user profile page.
     - In this page users can publish an article, or manage their articles.
     - If they want, they can access the logout feature through the logout button.
 
-    ENTER PROFILE PAGE
+    ![Profile Page](/documentation/profile_page.jpg "Profile Page")
 
 - Publish an article
     - Creating and adding an article by a registered user is possible.
     - The user can publish an article after signing in and from the profile page.
     - The user needs to enter the title, content and image to post the article.  THe excerpt is optional.
 
-    ENTER PUBLISH PAGE
+    ![Publish Page](/documentation/publish_page.jpg "Publish Page")
 
     - Once the article is published te user can view, edit or delete the article in the Manage Articles page.
 
@@ -107,21 +105,21 @@ The defined user stories can be found here.
     - Status of article: If the article is sent for approval and yet to be published, the display shows 'pending approval'.  Once approved by admin, it is published a message "Published" is displayed.
     - The buttons for editng and deleting are given for the user.
 
-    ENTER MANAGED ARTICLES PAGE
+    ![Manage Page](/documentation/manage_articles_page.jpg "Manage Page")
 
 - Edit an Article
     - An authenicated/owner of an article can edit only.
     - Either pending or approved articles can be edited.
     - When editing, form is prepopulated and ready for editing.
 
-    ENTER EDITING PAGE
+    ![Edit Page](/documentation/edit_page.jpg "Edit Page")
 
 - Delete an Article
     - An authenicated/owner of an article can delete the article.
     - Either pending or approved articles can be edited.
     - If an article is selected for deletion, the user is asked for confirmation via pop-up alert.
 
-    ENTER DELETION POP UP
+    ![Delete Page](/documentation/delete_page.jpg "Delete Page")
 
 - Like and Comment on an Article
     - All site users can view comments and likes.
@@ -129,7 +127,8 @@ The defined user stories can be found here.
     - Once users are registered the box is visible and users will have the ability to write a comment.
     - Registered users will also be able to like/unlike a post.
 
-    ENTER COMMENT SECTION
+    ![Comment Page](/documentation/comment_page.jpg "Comment Page")
+    ![Likes Page](/documentation/likes_page.jpg "Likes Page")
 
 ## Future Features
 - Booking feature so users can join in nearby running groups.
