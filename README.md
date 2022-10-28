@@ -110,5 +110,92 @@ The defined user stories can be found here.
 
     ENTER MANAGED ARTICLES PAGE
 
+- Edit an Article
+    - An authenicated/owner of an article can edit only.
+    - Either pending or approved articles can be edited.
+    - When editing, form is prepopulated and ready for editing.
+
+    ENTER EDITING PAGE
+
+- Delete an Article
+    - An authenicated/owner of an article can delete the article.
+    - Either pending or approved articles can be edited.
+    - If an article is selected for deletion, the user is asked for confirmation via pop-up alert.
+
+    ENTER DELETION POP UP
+
+- Like and Comment on an Article
+    - All site users can view comments and likes.
+    - Unregistered users cannot add a comment (no comment box to write in is visible).
+    - Once users are registered the box is visible and users will have the ability to write a comment.
+    - Registered users will also be able to like/unlike a post.
+
+    ENTER COMMENT SECTION
+
+## Future Features
+- Booking feature so users can join in nearby running groups.
+- Account holders will be able to save their favourite articles or to read later.
+- Users can set up their own profile page.
+- Follow other Users.
+
+## Wireframes
+
+## Structure
+The structure idea for The Running Club was to keep it clean and simple, avoiding content that filled up the whole page.  The idea was to keep it slick and allow the simplicity to help users access the content and navigate through the application easily.
+
+Clean colours of white and black/dark grey have been used to create a crisp look and allow users to focus on the relevant content and important alerts.
+
+The main app for this projects is Running Club Articles blog app.
+
+Throughout the project development, GitHub projects was used.  Click here to view.
+
+ENTER LINK TO PROJECTS ISSUE PAGES
+
+## Databases
+
+As The Running Club requires a database, I have created two database models:
+
+ENTER POST MODEL
+
+ENTER COMMENT MODEL
+
+### Post Model:
+
+The Post Model handles article details: title, status, date created/updated, featured image, excerpt and likes.  This model handles the base for confirming user authentication to manage their articles.
+
+### Comment Model:
+
+The Comment Model handles the content of the comment, the username of the commentor and time/date of the comment being issued.
+
+## Technologies Used:
+
+- HTML
+- CSS
+- JavaScript
+- Python
+
+## Frameworks, Libraries & Tools Used
+
+- Bootstrap - grid, layout, columns, cards and forms structure.
+- Django - django frameworks to manage apps.
+- GitHub - to store the overall project repository.
+- GitPod - used as workspace for the coding.
+- Figma - To design the wireframe of the complete project.
+- Google Fonts - For the written content and logo.
+- Fontawesome - for social media icons.
+- Heroku - for deployment of the project.
+- PostgreSQL - database storage.
+- Cloudinary - image and static files storage.
+- AmIResponsive - responsiveness of the site.
+- Lighthouse - used for testing site functionality.
+- W3C Markup Validation Service - HTML testing.
+- W3C CSS Validation Service - CSS testing.
+- PEP8 - Python testing.
+
+## Testing
+
+
+
+
 
 
