@@ -6,8 +6,7 @@ The Running Club is a platform for avid runners.  The aim of this project is to 
 
 
 
-
-The live site can be found here.
+The live site can be found [here](https://the-running-club.herokuapp.com/).
 
 ## Table of Contents
 
@@ -242,9 +241,8 @@ The Comment Model handles the content of the comment, the username of the commen
 
 ## Testing
 
-Unit Testing, Validator Testing and Bugs are found here.
 
-## Unit Testing
+### Unit Testing
 
 I have used django TestCase for automated testing views, forms and models files.
 
@@ -342,12 +340,13 @@ Result:
 
 ### Testing Models:
 
-    - Models are tested while testing views and forms as well. But in addition, I tested if the models shows that featured image is a requirement and successfully sent to the database:
+- Models are tested while testing views and forms as well. But in addition, I tested if the models shows that featured image is a requirement and successfully sent to the database:
 
     ```ruby 
     class TestModels(TestCase):
     def test_has_featured_image(self):
         self.assertTrue(Post.featured_image)
+
         
 
 Result:
@@ -358,20 +357,65 @@ Result:
 
 ### Lighthouse
 
-    - Testing results:
+- Testing results:
 
     ENTER LIGHTHOUSE REPORT
 
 ## W3C Markup Validation Service
 
-ENTER REPORT RESULT
+- Errors and Warnings found and issues resolved with all tests passing.
+
+    - Home Page:
+    ![Home Validation](/documentation/html_home.jpg "Home Validation")
+
+    - Article Page:
+    ![Home Validation](/documentation/html_article.jpg "Home Validation")
+
+    - Article Detail:
+    ![Home Validation](/documentation/html_home.jpg "Home Validation")
+
+    - SignUp Page:
+    ![Home Validation](/documentation/html_signup.jpg "Home Validation")
+
+    - Login Page:
+    ![Home Validation](/documentation/html_login.jpg "Home Validation")
+
+    - Logout Page:
+    ![Home Validation](/documentation/html_logout.jpg "Home Validation")
+
+    - Publish Page:
+    ![Home Validation](/documentation/html_publish.jpg "Home Validation")
+
+    - Profile Page:
+    ![Home Validation](/documentation/html_profile.jpg "Home Validation")
+
+
+
+
+
+
+
+- Errors and Warnings found but resolved:
+
+![Errors](/documentation/bugs.jpg "Errors")
 
 ## W3C CSS Validation Service
 
-ENTER REPORT RESULT
+![CSS Validation](/documentation/css_validator.jpg "CSS Validation")
 
 ## PEP8 Python Validator
 
+PEP8 compliance was checked with pycodestyle due to PEP Online Validator currently down.
+
+I used the following steps to check the compliance:
+
+    1. Run the command pip3 install pycodestyle
+    2. In the workspace, press Ctrl+Shift+P (Cmd+Shift+P on Mac).
+    3. Type the word linter inot the search bar that appears, and clikc on Pythin: Select Linter from the filtered results.
+    4. Select pycodestyle from the list.
+    5. PEP8 errors will be underlined in red, as well as being listed in the PROBLEMS tab beside your terminal.
+
+Once I completed these steps, I did not have an errots underlined, nor any added to the PROBLEMS tab.
 
 ## BUGS
 
