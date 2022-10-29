@@ -160,6 +160,34 @@ The defined user stories can be found here.
 
 ## Wireframes
 
+- When designing my project, I wanted to focus more of layout rather than detail, due to my overall goal of keeping the site simple and clean.  I made a few slight changes during the project updates, but kept to the design overall.
+
+    - Home Page:
+    ![Home Page Mockup](/documentation/home_page_mockup.jpg "Home Page Mockup")
+
+    - Articles Page:
+    ![Articles Page Mockup](/documentation/articles_page_mockup.jpg "Articles Page Mockup")
+
+    - Manage Articles Page:
+    ![Manage Page Mockup](/documentation/manage_page_mockup.jpg "Manage Page Mockup")
+
+    - Account Page:
+    ![Account Page Mockup](/documentation/my_articles_mockup.jpg "Account Page Mockup")
+
+    - Publish Page:
+    ![Publish Page Mockup](/documentation/publish_mockup.jpg "Publish Page Mockup")
+
+    - Edit Page:
+    ![Edit Page Mockup](/documentation/edit_article_mockup.jpg "Edit Page Mockup")
+
+    - Register Page:
+    ![Register Page Mockup](/documentation/register_page_mockup.jpg "Register Page Mockup")
+
+    - Login Page:
+    ![Login Page Mockup](/documentation/login_page_mockup.jpg "Register Page Mockup")
+
+
+
 ## Structure
 The structure idea for The Running Club was to keep it clean and simple, avoiding content that filled up the whole page.  The idea was to keep it slick and allow the simplicity to help users access the content and navigate through the application easily.
 
@@ -175,9 +203,9 @@ ENTER LINK TO PROJECTS ISSUE PAGES
 
 As The Running Club requires a database, I have created two database models:
 
-ENTER POST MODEL
+![Post Model](/documentation/post_model.jpg "Post Model")
 
-ENTER COMMENT MODEL
+![Comment Model](/documentation/comment_model.jpg "Comment Model")
 
 ### Post Model:
 
