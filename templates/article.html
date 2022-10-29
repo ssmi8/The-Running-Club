@@ -15,7 +15,7 @@
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top"
-                                    src="https://res.cloudinary.com/deqj8dkeq/image/upload/v1666455625/Portfolio%204/madvjqs911bypjpha20b.webp">
+                                    src="https://res.cloudinary.com/deqj8dkeq/image/upload/v1666455625/Portfolio%204/madvjqs911bypjpha20b.webp" alt="Man running">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ post.featured_image.url }}">
                                 {% endif %}
@@ -27,7 +27,7 @@
                                 <h2 class="card-title">{{ post.title }}</h2>
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
-                            <hr />
+                            <hr/>
                             <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}</p>
                         </div>
