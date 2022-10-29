@@ -359,7 +359,7 @@ Result:
 
 - Testing results:
 
-    ENTER LIGHTHOUSE REPORT
+![Lighthouse Report](/documentation/lighthousereport.jpg "Lighthouse Report")
 
 ## W3C Markup Validation Service
 
@@ -369,30 +369,25 @@ Result:
     ![Home Validation](/documentation/html_home.jpg "Home Validation")
 
     - Article Page:
-    ![Home Validation](/documentation/html_article.jpg "Home Validation")
+    ![Article Validation](/documentation/html_article.jpg "Article Validation")
 
     - Article Detail:
-    ![Home Validation](/documentation/html_home.jpg "Home Validation")
+    ![Detail Validation](/documentation/html_detail.jpg "Detail Validation")
 
     - SignUp Page:
-    ![Home Validation](/documentation/html_signup.jpg "Home Validation")
+    ![Signup Validation](/documentation/html_signup.jpg "SignUp Validation")
 
     - Login Page:
-    ![Home Validation](/documentation/html_login.jpg "Home Validation")
+    ![Login Validation](/documentation/html_login.jpg "Log In Validation")
 
     - Logout Page:
-    ![Home Validation](/documentation/html_logout.jpg "Home Validation")
+    ![Logout Validation](/documentation/html_logout.jpg "Log Out Validation")
 
     - Publish Page:
-    ![Home Validation](/documentation/html_publish.jpg "Home Validation")
+    ![Publish Validation](/documentation/html_publish.jpg "Publish Validation")
 
     - Profile Page:
-    ![Home Validation](/documentation/html_profile.jpg "Home Validation")
-
-
-
-
-
+    ![Profile Validation](/documentation/html_profile.jpg "Profile Validation")
 
 
 - Errors and Warnings found but resolved:
