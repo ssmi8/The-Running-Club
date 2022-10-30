@@ -259,43 +259,9 @@ I have used django TestCase for automated testing views, forms and models files.
             self.assertTemplateUsed(response, 'index.html')
             
 
-
-- Testing Article Page View:
-
-    ```ruby
-    class TestPostListViews(TestCase):
-        def test_get_post_list_page(self):
-            response = self.client.get('/article/')
-            self.assertEqual(response.status_code, 200)
-            self.assertTemplateUsed(response, 'article.html')
-            
-
-
-
-- Testing Profile Page View:
-
-    ```ruby
-    class TestProfileViews(TestCase):
-        def test_profile_page(self):
-            response = self.client.get('/profile')
-            self.assertEqual(response.status_code, 200)
-            self.assertTemplateUsed(response, 'profile.html')
-            
-
-
-- Testing Adding/Publish Articles Page View:
-
-   ```ruby
-    class TestPublishPoemViews(TestCase):
-        def test_can_publish_poem(self):
-            response = self.client.get('/publish')
-            self.assertEqual(response.status_code, 200)
-            self.assertTemplateUsed(response, 'publish.html')
-            
-
 Result:
 
-ENTER TERMINAL RESULT
+![Test Views Result](/documentation/test_views.jpg "Test Views Result")
 
 ### Testing Forms:
 
