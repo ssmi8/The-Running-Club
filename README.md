@@ -370,33 +370,126 @@ PEP8 compliance was checked with pycodestyle due to PEP Online Validator current
 
 I used the following steps to check the compliance:
 
-    1. Run the command pip3 install pycodestyle
-    2. In the workspace, press Ctrl+Shift+P (Cmd+Shift+P on Mac).
-    3. Type the word linter inot the search bar that appears, and clikc on Pythin: Select Linter from the filtered results.
-    4. Select pycodestyle from the list.
-    5. PEP8 errors will be underlined in red, as well as being listed in the PROBLEMS tab beside your terminal.
+1. Run the command pip3 install pycodestyle
+2. In the workspace, press Ctrl+Shift+P (Cmd+Shift+P on Mac).
+3. Type the word linter inot the search bar that appears, and clikc on Pythin: Select Linter from the filtered results.
+4. Select pycodestyle from the list.
+5. PEP8 errors will be underlined in red, as well as being listed in the PROBLEMS tab beside your terminal.
 
 Once I completed these steps, I did not have an errots underlined, nor any added to the PROBLEMS tab.
 
-## BUGS
 
 ## User Story Testing
 
 ### Admin
 
-    - As a Site Admin I can approve or disapprove posts so that I can filter out objectionable posts.
-    - As a Site Admin I can create, read, update and delete posts so that i can manage the content.
-    - As a Site Admin I can approve posts before it's published so the site can be consistent.
-    - As a Site Admin I can aprove comments before it's published.
+- As a Site Admin I can approve or disapprove posts so that I can filter out objectionable posts.
+- As a Site Admin I can create, read, update and delete posts so that i can manage the content.
+- As a Site Admin I can approve posts before it's published so the site can be consistent.
+- As a Site Admin I can aprove comments before it's published.
 
-    ENTER ADMIN POST SCREEN FOR APPROVALS
-    ENTER ADMIN COMMENTS SCREEN FOR APPROVALS
+![Admin Approve](/documentation/admin_approve.jpg "Admin Approve")
 
-ADD TESTING PAGES
+![Comment Approve](/documentation/comment_approve.jpg "Comment Approve")
+
+### Member User
+
+- As a Member User I can register an account so that I can manage my posts, comment and like.
+
+![Sign Up](/documentation/signup_page.jpg "Sign Up")
+
+- As a Member User I can post/add/edit/delete articles and manage my articles.
+
+![Profile](/documentation/profile_page.jpg "Profile")
+
+- As a Member User I can like/unlike a post.
+- As a Member User I can leave comments on a post.
+
+![Comments](/documentation/comment_page.jpg "Comments")
+
+- As a Member User I can view my posts.
+
+![Manage Page](/documentation/manage_articles_page.jpg "Manage Page")
+
+
+### General User
+
+- As a Site User I can view a list of posts and select one to read.
+- As a Site User I can view comments and likes
+
+![Article Page](/documentation/articles_page.jpg "Article Page")
+
 
 ## Deployment:
 
 This project was deployed to Heroku. 
+
+Steps to open an account in Heroku:
+
+- Sign Up, if you don't already have an account already.
+- After you fill in all require information, and sign in you will be able to create an app.
+- Click on New -> Create nee app
+- Choose a name for your application and select location you are based.
+
+The initial deployment was immediately after cretaing all the file directories within the repository. This is to ensure and overcome any deployment error before hand and resolve the issue before it gets more complicated.
+
+Steps to Deployment
+
+I have followed Code Institute's [Django Blog Cheat Sheet](https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf)
+
+### Step 1: Installing Django and supporting libraries
+
+In the Terminal:
+
+![Step1](/documentation/step_1.jpg "Step1")
+
+In the settings.py file:
+
+![Step1_2](/documentation/step_1_2.jpg "Step1_2")
+
+In the Terminal:
+
+![Step1](/documentation/step_1_1.jpg "Step1")
+
+
+### Step 2: Deploying an app to Heroku
+
+Here there are 4 stages:
+1. Create the Heroku App
+2. Attach the database
+3. Prepare the environment and settings.py file
+4. Get our static and media files stored on Cloudinary
+
+2.1 Create the Heroku app
+
+In Heroku:
+
+![Step2](/documentation/step2_1.jpg "Step2")
+
+2.2 Attach the Database:
+
+In gitpod
+
+![Step2](/documentation/step2_2.jpg "Step2")
+
+2.3 Prepare our environment and settings.py file:
+
+![Step2](/documentation/missingsteps.jpg "Step2")
+
+2.4 Get our static and media files stored on Cloudinary:
+
+![Step2](/documentation/step2_3.jpg "Step2")
+
+![Step2](/documentation/step2_31.jpg "Step2")
+
+![Step2](/documentation/step2_4.jpg "Step2")
+
+![Step2](/documentation/step2_41.jpg "Step2")
+
+![Step2](/documentation/step2_5.jpg "Step2")
+
+Before the final Deployement: Remove the "DISABLE_COLLECTSTATIC" from Heroku Config vars, and Change Debug to "False" in settings.py
+
 
 ## Credits
 
@@ -411,11 +504,5 @@ During the project development process, I have used various sources to aid my de
 
 ## Acknowledgements
 
-
-
-
-
-
-
-
+I would like to acknowledge and present my thanks to Rahul, my mentor from Code Insitute for his guidance and constant support. It wouldn't have been possible without the amazing community in Slack, Tutors of Code insitute Tutor supports, and my friends who constantly motivated and supported me.
 
