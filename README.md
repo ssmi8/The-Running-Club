@@ -66,8 +66,7 @@ The defined user stories can be found here.
     - The home page has minimal content which gives a brief overview to the website, and doesn't overload the user with information.  There is a simple navigation bar for the user to navigate through the site easily.  If the user is not registered, the navigation bar will allow users to log in register.  If the user is registered and logged in, the can access their account or logout.
 
     ![Home Page - top](/documentation/home_page1.jpg "Home Page")
-    ![Home Page - bottom](/documentation/home_page2.jpg "Home Page")
-
+    
     - The account button takes the users to their profile.
 
 - Article Page
@@ -80,7 +79,10 @@ The defined user stories can be found here.
     - This feature helps the user to choose a particular article to view and gives them an idea as to what the article is about.
     - The Article page has pagination feature with each page upto 6 posts.
 
-    ENTER NEXT & PREVIOUS
+   ![Next Button](/documentation/next.jpg "Next Button")
+   
+   ![Previous Button](/documentation/prev.jpg "Previous Button")
+
 
 - Sign Up
     - Users can register and create their own account.
