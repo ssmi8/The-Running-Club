@@ -14,11 +14,9 @@ from django.contrib import messages
 def booking(request):
     if request.method == "GET":
         booking_form = BookingForm()
-        existing_bookings = []
         existing_bookings = Booking.objects.filter(
             confirmed=True, user=request.user
-        ).all()
-        print(existing_bookings)
+        )
         return render(request, 'booking.html', context={
             "form": booking_form, "existing_bookings": existing_bookings})
 
@@ -54,9 +52,9 @@ def edit_booking(request, booking_id):
             print(booking_form.cleaned_data)
             booking_form.save()
             messages.success(request, 'Booking updated successfully.')
-            return redirect('all_bookings')
+            return redirect('bookings')
         else:
-            return redirect('all_bookings')
+            return redirect('bookings')
 
     print(existing_booking)
     booking_form = BookingForm(instance=existing_booking)
@@ -72,7 +70,7 @@ def delete_booking(request, booking_id):
         return redirect("index")
     existing_bookings.delete()
 
-    return redirect('all_bookings')
+    return redirect('bookings')
 
 
 def homepage(request):
