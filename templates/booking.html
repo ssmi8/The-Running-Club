@@ -3,10 +3,14 @@
 {% block content %}
 
 {% load crispy_forms_tags %}
-<h1>Welcome to the Running Club Booking page</h1>
+<h1 class="px-3">Welcome to the Running Club Booking page</h1>
 
-<p>To book your run complete the form below</p>
-<div class="container-fluid post-from-container">
+<div class="px-3">
+  <p>To book your run complete the form below:</p>
+  <p>When entering a date/time please type in the following format: dd/mm/yy 00:00.</p>
+</div>
+
+<div class="container-fluid post-from-container w-25 ">
   <form action = "" method="POST">
     {% csrf_token %}
     {{ form|crispy }}
@@ -19,7 +23,7 @@
           });
         </script>
 
-    <button class="join-button" type="submit" value="submit">Submit
+    <button class="btn btn-signup btn-lg" type="submit" value="submit">Submit
     </button>
   </form>
 </div>
@@ -34,7 +38,7 @@
     <a href="{% url 'update-booking' booking.id %}">Reschedule
     </a>
   </button>
-  <button onclick="return confirm('Are you sure you want to cancel your run?')">
+  <button class="btn btn-signup btn-lg" onclick="return confirm('Are you sure you want to cancel your run?')">
     <a href="{% url 'delete-booking' booking.id %}">Cancel
     </a>
   </button>
