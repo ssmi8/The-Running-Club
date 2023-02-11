@@ -1,7 +1,7 @@
 # The Running Club
 
 ## About
-The Running Club is a platform for avid runners.  The aim of this project is to join the running community in sharing thoughts, ideas and experiences they have faced.  Each user can add an article they feel can help the community, where other users can comment, like they content.
+The Running Club is a platform for avid runners.  The aim of this project is to join the running community in sharing thoughts, ideas and experiences they have faced.  Each user can add an article they feel can help the community, where other users can comment, like they content.  Users can also join group runs through the booking form based on their level of ability.
 
 
 
@@ -57,6 +57,19 @@ The defined user stories can be found here.
 - As a Site User I can click on a post to read the full article.
 - As a Site User / Admin User I can view comments on an article.
 - As a Site User / Admin User I can view the number of likes on each post.
+
+
+### CRUD Functionality
+
+The site offers a feature to Creade, Read, Update and Delete articles they post, as well as any bookings a user has made.
+
+- Create - new (un-authenticated) users can register with The Running Club to create a user account, and members (authenticated users) can comment/like articles and book runs with groups.
+
+- Read - authenticated users can view all of the runs they have booked.
+
+- Update - authenticated users can edit their articles and reschedule any of their bookings by changing a booking to their new preferred time and date.
+
+- Delete - authenticated users can cancel any of their bookings, as well delete articles they have published.
 
 ## Features
 
@@ -154,12 +167,13 @@ The defined user stories can be found here.
     ![Likes Page](/documentation/likes_page.jpg "Likes Page")
 
 ### Future Features
-- Booking feature so users can join in nearby running groups.
 - Account holders will be able to save their favourite articles or to read later.
 - Users can set up their own profile page.
 - Follow other Users.
 
-## Wireframes
+## Agile Development
+
+### Wireframes
 
 - When designing my project, I wanted to focus more of layout rather than detail, due to my overall goal of keeping the site simple and clean.  I made a few slight changes during the project updates, but kept to the design overall.
 
@@ -187,6 +201,8 @@ The defined user stories can be found here.
     - Login Page:
     ![Login Page Mockup](/documentation/login_page_mockup.jpg "Register Page Mockup")
 
+
+- As the project developed some details of the User stories were reviewed and revised. Changes were made to ensure the delivery of a Miminum Viable Product. As one example, User Story 3 above was updated to a fourth User Story that had to be moved to the Backlog column of the kanban board, and at a later stage of development it was moved into the To Do column. Click [here](https://github.com/users/ssmi8/projects/2) to visit this Github page
 
 
 ## Structure
