@@ -34,7 +34,7 @@ class Comment(models.Model):
     email = models.EmailField()
     body = models.TextField()
     created_on = models.DateField(auto_now=True)
-    approved = models.BooleanField('Approved', default=True)
+    approved = models.BooleanField('Approved', default=False)
 
     class Meta:
         ordering = ['created_on']
