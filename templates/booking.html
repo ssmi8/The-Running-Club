@@ -28,21 +28,22 @@
   </form>
 </div>
 
+<h5 class="px-3">Your scheduled runs:</h5>
 {% for booking in existing_bookings %}
-<div>
+<div class="px-3">
 <div>{{booking.session_type}}
 </div>
 <div>{{booking.booking_date_time}}
 </div>
-<button onclick="return confirm('Are you sure you want to reschedule your run?')">
-    <a href="{% url 'update-booking' booking.id %}">Reschedule
+  <button onclick="return confirm('Are you sure you want to reschedule your run?')">
+    <a class="btn btn-warning" href="{% url 'edit-booking' booking.id %}">Reschedule
     </a>
   </button>
-  <button class="btn btn-signup btn-lg" onclick="return confirm('Are you sure you want to cancel your run?')">
-    <a href="{% url 'delete-booking' booking.id %}">Cancel
+  <button onclick="return confirm('Are you sure you want to cancel your run?')">
+    <a class="btn btn-danger" href="{% url 'delete-booking' booking.id %}">Cancel
     </a>
   </button>
-  </div>
+</div>
 
 {% endfor %}
 

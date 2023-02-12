@@ -17,11 +17,11 @@
 </span>
 {% endif %}
 <button class="join-button" type="submit" value="submit">
-  <a href="{% url 'booking' %}">Reschedule
+  <a class="btn btn-warning" href="{% url 'booking' %}">Reschedule
   </a>
 </button>
 <button onclick="return confirm('Are you sure you want to cancel your run?')" class="join-button" type="submit" value="submit">
-  <a href="{% url 'index' %}">Cancel booking
+  <a class="btn btn-danger" href="{% url 'index' %}">Cancel booking
   </a>
 </button>
 {%endblock%}

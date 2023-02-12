@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, get_object_or_404, reverse
+from django.shortcuts import render, HttpResponse, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponse
 from .forms import BookingForm
@@ -52,9 +52,9 @@ def edit_booking(request, booking_id):
             print(booking_form.cleaned_data)
             booking_form.save()
             messages.success(request, 'Booking updated successfully.')
-            return redirect('bookings')
+            return redirect('booking')
         else:
-            return redirect('bookings')
+            return redirect('booking')
 
     print(existing_booking)
     booking_form = BookingForm(instance=existing_booking)
@@ -70,7 +70,7 @@ def delete_booking(request, booking_id):
         return redirect("index")
     existing_bookings.delete()
 
-    return redirect('bookings')
+    return redirect('booking')
 
 
 def homepage(request):
