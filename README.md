@@ -23,6 +23,7 @@ The live site can be found [here](https://the-running-club.herokuapp.com/).
 - [Databases](#databases)
     - [Post Model](#post-model)
     - [Comment Model](#comment-model)
+    - [Booking Model](#booking-model)
 - [Technologies Used](#technologies-used)
 - [Frameworksm, Libraries & Tools Used](#frameworks-libraries--tools-used)
 - [Testing](#testing)
@@ -166,6 +167,14 @@ The site offers a feature to Creade, Read, Update and Delete articles they post,
     ![Comment Page](/documentation/comment_page.jpg "Comment Page")
     ![Likes Page](/documentation/likes_page.jpg "Likes Page")
 
+- Booking a Run, with reschedule/delete options
+    - Users can only access this page once registered and logged in
+    - If a user is not logged in, the page will redirect to the sign in page
+    - Users can submit a level category based on their ability (Beginner, Intermediate, Advanced)
+    - Once booking is confirmed, they booked runs are displayed, with the ability to edit or delete
+
+    ![Booking Page](/documentation/booking_page.png "Booking Page")
+
 ### Future Features
 - Account holders will be able to save their favourite articles or to read later.
 - Users can set up their own profile page.
@@ -202,7 +211,7 @@ The site offers a feature to Creade, Read, Update and Delete articles they post,
     ![Login Page Mockup](/documentation/login_page_mockup.jpg "Register Page Mockup")
 
 
-- As the project developed some details of the User stories were reviewed and revised. Changes were made to ensure the delivery of a Miminum Viable Product. As one example, User Story 3 above was updated to a fourth User Story that had to be moved to the Backlog column of the kanban board, and at a later stage of development it was moved into the To Do column. Click [here](https://github.com/users/ssmi8/projects/2) to visit this Github page
+- As the project developed some details of the User stories were reviewed and revised. Changes were made to ensure the delivery of a Miminum Viable Product. As one example, I was unable to create a schedule for users to be able to select a date to run, so this was moved into to a fututre featurecolumn of the kanban board. Click [here](https://github.com/users/ssmi8/projects/2) to visit this Github page
 
 
 ## Structure
@@ -231,6 +240,10 @@ The Post Model handles article details: title, status, date created/updated, fea
 ### Comment Model:
 
 The Comment Model handles the content of the comment, the username of the commentor and time/date of the comment being issued.
+
+### Booking Model:
+
+The Booking Model handles the booking of runs, the session type and date/time of the run booked.
 
 ## Technologies Used:
 
@@ -382,19 +395,20 @@ Result:
 
 ![CSS Validation](/documentation/css_validator.jpg "CSS Validation")
 
-## PEP8 Python Validator
+## Python Validator
 
-PEP8 compliance was checked with pycodestyle due to PEP Online Validator currently down.
+[CI Python Linter](https://pep8ci.herokuapp.com/) was the validator used. All the Python code passed without errors, except for the following files:
 
-I used the following steps to check the compliance:
+- article/views.py
+- booking/views.py
 
-1. Run the command pip3 install pycodestyle
-2. In the workspace, press Ctrl+Shift+P (Cmd+Shift+P on Mac).
-3. Type the word linter inot the search bar that appears, and clikc on Pythin: Select Linter from the filtered results.
-4. Select pycodestyle from the list.
-5. PEP8 errors will be underlined in red, as well as being listed in the PROBLEMS tab beside your terminal.
+Which gave E501 'line too long' and W293 'contains whitespace' warnings.  These have been corrected where possible.
 
-Once I completed these steps, I did not have an errots underlined, nor any added to the PROBLEMS tab.
+![article python linter](/documentation/article_views_test.png "CI Python Linter")
+
+![booking python linter](/documentation/booking_views_test.png "CI Python Linter")
+
+
 
 
 ## User Story Testing
@@ -440,7 +454,7 @@ Once I completed these steps, I did not have an errots underlined, nor any added
 
 ## Deployment:
 
-This project was deployed to Heroku. 
+This project was deployed to Heroku,using an ElephantSQL Postgres database.
 
 Steps to open an account in Heroku:
 
@@ -452,6 +466,69 @@ Steps to open an account in Heroku:
 The initial deployment was immediately after cretaing all the file directories within the repository. This is to ensure and overcome any deployment error before hand and resolve the issue before it gets more complicated.
 
 Steps to Deployment
+
+- Fork or clone this repository in GitHub.
+
+- You will need a Cloudinary account to host user images and static files.
+
+- Login to Cloudinary.
+
+- Select the 'dashboard' option.
+
+ - Copy the value of the 'API Environment variable' from the part starting cloudinary:// to the end. You may need to select the eye icon that allows you to view the full environment variable. copy and paste this value to a document or file until it is needed.
+
+- Log in to Heroku.
+
+- Select 'Create new app'.
+
+- Enter a name for the app and select the appropriate region (Eurpoe, in the case of this project).
+
+- Select 'Create app'.
+
+- Select 'Settings'.
+
+- Login to ElephantSQL.
+
+- Click 'Create new instance' on the dashboard.
+
+- Name the 'plan' and select the 'Tiny Turtle' option.
+
+- Select 'select region'.
+
+- Choose the nearest data centre to your location.
+
+- Click 'Review'.
+
+- Go to the ElephantSQL dashboard and click on the 'database instance name' for this project.
+
+- Copy the ElephantSQL database URL to your clipboard.
+
+- Return to the Heroku dashboard.
+
+- Select the 'settings' tab.
+
+- Locate the 'reveal config vars' link and select.
+
+- Enter the following config var names and values:
+
+    - CLOUDINARY_URL: 'value'
+    - DATABASE_URL: 'value'
+    - PORT: 8000
+    - SECRET_KEY: 'value'
+    - Select the 'Deploy' tab.
+
+- Select 'GitHub' and confirm you wish to deploy using GitHub. If prompted, enter your GitHub password.
+
+- Find the 'Connect to GitHub' section and locate your repository.
+
+- Select 'Connect' when found.
+
+- If you decide that your deployed site be automatically redeployed every time you push changes to GitHub then choose the main branch under 'Automatic Deploys' and select 'Enable Automatic Deploys' option.
+
+- Find the 'Manual Deploy' section, choose 'main' as the branch to deploy and select 'Deploy Branch'.
+
+- Your site will be deployed once the build is complete.
+
 
 I have followed Code Institute's [Django Blog Cheat Sheet](https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf)
 
@@ -507,6 +584,16 @@ In gitpod
 ![Step2](/documentation/step2_5.jpg "Step2")
 
 Before the final Deployement: Remove the "DISABLE_COLLECTSTATIC" from Heroku Config vars, and Change Debug to "False" in settings.py
+
+## Bugs/Errors
+
+During this project, I have run into a few problems, which has helpped me develop my skills in coding as well as troubleshooting potential issues.
+
+- An issue I had was that my original database was corrupt, which was causing many issues in my project, where I could not add a Booking page, nor add any new articles/comments.  THis was rectified by creating a new database in Elephant SQL, and relinking to the project and Heroku.
+
+- Another issue I faced was that comments would not be posted, even after approval.  I identified the issue, which was caused by the save command, lacking the () afterwards.  This was fixed and subsequently I was able to post comments.
+
+- Another issue that I found, was that posts would not appear on the page, even after approval.  I decided to remove the approve requests in the model.py and this worked.  Posts can still be approved on the admin page, by using the dropdown menu and selecting publish, rather than draft.
 
 
 ## Credits

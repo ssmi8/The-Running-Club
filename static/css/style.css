@@ -267,16 +267,6 @@ body {
 }
 
 
-.form-section {
-	clear: left;
-	background-image: url(https://res.cloudinary.com/dzhbg6go0/image/upload/v1670254218/CockapooClub/benji-couch2_cdjxgx.webp);
-	background-size: cover;
-	background-position: center;
-	height: auto;
-	padding-top: 1rem;
-	padding-bottom: 1rem
-}
-
 .choose {
 	line-height: 2;
 	font-size: large

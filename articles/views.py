@@ -34,9 +34,10 @@ def publish(request):
             form = article_form.save(commit=False)
             form.author = User.objects.get(username=request.user.username)
             form.slug = form.title.replace(" ", "-")
-            messages.success(request, 'Your article post has been submitted for approval')
+            messages.success(
+                request, 'Your article post has been submitted for approval')
             form.save()
-        
+      
         return redirect('my_articles')
 
     article_form = ArticleForm()
@@ -59,7 +60,9 @@ def edit_article(request, post_id):
         if article_form.is_valid():
             form = article_form.save(commit=False)
             form.approved = False
-            messages.success(request, 'Updated article post has been submitted for approval')
+            messages.success(
+                request, 'Updated article post has been submitted for approval'
+            )
             form.save()
 
             return redirect('my_articles')
@@ -140,7 +143,7 @@ class PostLike(View):
             post.likes.remove(request.user)
         else:
             post.likes.add(request.user)
-        
+
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
@@ -153,7 +156,7 @@ def register(request):
             messages.success(request, f"Account created for {username}!")
 
             return redirect('profile')
-        
+   
         else:
             form = UserRegisterForm()
         return render(request, 'account/signup.html', {'form': form})
